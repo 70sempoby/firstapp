@@ -68,15 +68,16 @@ st.write(title, '을 보셨군요!')
 #     st.write(bytes_data)
 
 
-# uploader files2
+# # uploader files2
 import pandas as pd
 
-uploaded_files1 = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-for uploaded_file1 in uploaded_files1:
-    #bytes_data = uploaded_file.read()
-    data = pd.read_csv(uploaded_file1) # data = pd.read_csv(uploaded_file1, encoding="utf-8 / euc-kr / cp949")
-    st.write("filename:", uploaded_file1.name)
-    st.write(data)
+# csv파일 불러오기
+# uploaded_files1 = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+# for uploaded_file1 in uploaded_files1:
+#     #bytes_data = uploaded_file.read()
+#     data = pd.read_csv(uploaded_file1) # data = pd.read_csv(uploaded_file1, encoding="utf-8 / euc-kr / cp949")
+#     st.write("filename:", uploaded_file1.name)
+#     st.write(data)
 
 # 파워포인트 파일 불러오기
 uploaded_files1 = st.file_uploader("Choose a CSV file", accept_multiple_files=True)

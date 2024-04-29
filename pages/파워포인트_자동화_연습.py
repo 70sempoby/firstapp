@@ -1,10 +1,11 @@
 import streamlit as st
+#pip install python-pptx 설치는 터미널, zsh상태에서 install하기
 from pptx import Presentation
 
 st.title("파워포인트 작성하기")
 # 강의 제목 및 부제목
-slide_title = "이차방정식의 활용"
-slide_subtitle = '황수빈 선생님의 수학 여행'
+slide_title = "인공지능의 활용"
+slide_subtitle = '생성형 AI로 로고 만들기'
 
 # 강의 개요 확장
 class_outline = st.text_area("개요를 작성해주세요.")
@@ -51,13 +52,14 @@ for i in range(len(lines)):
 #presentation.save("이차방정식 자료.pptx")
 #print("파워포인트로 내보내기 성공!")
 
+# 외부로 다운로드 하기
 import io
-
 ppt = io.BytesIO()
 presentation.save(ppt)
-ppt.seek(0)
+ppt.seek(0) # 위치 초기화
+
 st.download_button(
     label="다운로드하기",
     data=ppt,
     file_name='개요.pptx',
-    mime='application/vnd.openxmlformats-officedocument.presentaionml.presentaion')
+    mime='application/vnd.openxmlformats-officedocument.presentaionml.presentaion') #파일 형식을 정의하는 미디어타입
